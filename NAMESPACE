@@ -1,0 +1,6 @@
+exportPattern("^[[:alpha:]]+")
+
+import("methods")
+import("raster")
+import("sp")
+importFrom("utils", "data")
