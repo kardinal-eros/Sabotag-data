@@ -1,0 +1,6 @@
+language: R
+cache: packages
+sudo: required
+r_binary_packages:
+  - raster
+  - sp
