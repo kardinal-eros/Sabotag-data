@@ -15,9 +15,9 @@ PG \tab cities, towns, villages (Gemeinde)
 PB \tab official governmental area (Bezirk)
 BL \tab state (Bundesland)
 ST \tab nation (Staat)
-}
 
 Additional columns supplied by the original data set were removed to reduce memory demands.
+}
 
 \usage{data("BEV")}
 
