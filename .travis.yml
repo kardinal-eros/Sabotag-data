@@ -1,6 +1,7 @@
 language: R
 cache: packages
 sudo: required
+r_build_args: --resave-data
 warnings_are_errors: false
 r_binary_packages:
   - raster
