@@ -28,8 +28,8 @@ The europe-wide data set has been clipped to a bounding box well fitting the cou
 }
 
 \examples{
-data(rivers)
-data(lakes)
+data("rivers", package = "sabotagdata")
+data("lakes", package = "sabotagdata")
 
 ecrins()
 }

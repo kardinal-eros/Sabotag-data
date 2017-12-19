@@ -17,9 +17,13 @@ Colored relief map for the area of Austria.
 }
 
 \examples{
-data(relief)
+data("relief", package = "sabotagdata")
+data("Austria", package = "sabotagdata")
 
 plotRGB(relief)
+plot(Austria, add = TRUE)
+
+# todo: add ring of GRIDCELLS as grid identifier
 }
 
 \keyword{datasets}
