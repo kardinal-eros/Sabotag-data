@@ -1,4 +1,4 @@
-#	utility function to loadf both datasets
+#	utility function to load both datasets
 ecrins <- 
 function () {
 	data("rivers", package = "sabotagdata")
@@ -6,7 +6,7 @@ function () {
 	message("loaded rivers and lakes data sets")
 }
 
-#	utility function to loadf both datasets
+#	utility function to load both datasets
 ecrins2 <- 
 function () {
 	data("rivers2", package = "sabotagdata")
