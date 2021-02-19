@@ -2,7 +2,7 @@ Package: sabotagdata
 Type: Package
 Title: Data Sets for the sabotag R-package
 Version: 0.1-1
-Date: 2017-12-18
+Date: 2021-02-19
 Authors@R: c(person("Roland", "Kaiser", role = c("aut", "cre"),
 					 email = "kardinal.eros@gmail.com"))
 Maintainer: Roland Kaiser <kardinal.eros@gmail.com>

@@ -7,7 +7,10 @@ Country Borders of Austria and Neighbouring Countries
 }
 
 \description{
-Country border of Austria as \verb{SpatialLinesDataFrame}. The column \verb{COMMENT} hold information about country borders as two-letter country codes (ISO 3166-1 alpha-2). The outer frame is marked as not beeing assigned to any country code.
+Country border of Austria as \verb{SpatialLinesDataFrame}. The column
+\verb{COMMENT} hold information about country borders as two-letter country
+codes (ISO 3166-1 alpha-2). The outer frame is marked as not being
+assigned to any country code.
 }
 
 \usage{data("BEV")}

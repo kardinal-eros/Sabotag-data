@@ -8,12 +8,14 @@
 }
 
 \description{
-An R-package providing data sets for the Salzburger Botanische Arbeitsgemeinschaft
+An R-package providing data sets for the Salzburger Botanische
+Arbeitsgemeinschaft
 (SaBotAg).
 }
 
 \details{
-This package provides map data to be used as background for distribution maps for the country of Austria.
+This package provides map data to be used as background for distribution maps
+for the country of Austria.
 }
 
 \author{
