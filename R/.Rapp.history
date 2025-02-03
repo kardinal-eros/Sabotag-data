@@ -1,0 +1,363 @@
+require(terra)
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]
+head(BEV@data)
+head(BEV)
+BEV
+Encoding(BEV$KG)
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"
+save(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda", compress = "xz")
+BEV
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")
+Austria
+Austria$COMMENT
+values(Austria)
+plot(Auatria)
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")
+plot(Austria)
+save(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")
+relief <- readAll(relief)
+relief
+projection(relief) <- CRS("+init=epsg:4326")
+projection(relief) <- CRS("epsg:4326")
+require(terra)
+? projection
+relief
+?projection
+?terra
+csr(relief)
+require(terra)
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")
+csr(relief)
+r <- rast()#
+crs(r)
+csr(relief) <- "epsg:4326"
+r <- rast()#
+crs(r)#
+crs(r, describe=TRUE, proj=TRUE)#
+#
+crs(r) <- "+proj=lcc +lat_1=48 +lat_2=33 +lon_0=-100 +ellps=WGS84"
+crs(relief) <- "epsg:4326"
+save(relief, file = "relief.rda")
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")
+save(lakes, file = "lakes.rda")
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+save(rivers, file = "rivers.rda")
+require(terra)#
+#	BEV#
+#
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+save(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda", compress = "xz")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+save(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+#
+crs(relief) <- "epsg:4326"#
+save(relief, file = "relief.rda")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+save(lakes, file = "lakes.rda")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+save(rivers, file = "rivers.rda")
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+save(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda", compress = "xz")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+save(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+#
+crs(relief) <- "epsg:4326"#
+save(relief, file = "relief.rda")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+save(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+save(rivers, file = "/Users/roli/Documents/sabotag-data/data/rivers.rda")
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"
+save(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda", compress = "xz")
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+save(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+#
+crs(relief) <- "epsg:4326"#
+save(relief, file = "relief.rda")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+save(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+save(rivers, file = "/Users/roli/Documents/sabotag-data/data/rivers.rda")
+require(terra)#
+#	BEV#
+#
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+save(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda", compress = "xz")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+save(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+#
+crs(relief) <- "epsg:4326"#
+save(relief, file = "/Users/roli/Documents/sabotag-data/data/relief.rda")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+save(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+save(rivers, file = "/Users/roli/Documents/sabotag-data/data/rivers.rda")
+? save
+require(terra)#
+#	BEV#
+#
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+save(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda", compress = "xz")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+save(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+#
+crs(relief) <- "epsg:4326"#
+save(relief, file = "/Users/roli/Documents/sabotag-data/data/relief.rda", compress = "xz")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+save(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda", compress = "xz")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+save(rivers, file = "/Users/roli/Documents/sabotag-data/data/rivers.rda", compress = "xz")
+saveRDS(pack(lakes), file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")
+?pack
+? saveRDS
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+saveRDS(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+saveRDS(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+#
+crs(relief) <- "epsg:4326"#
+saveRDS(relief, file = "/Users/roli/Documents/sabotag-data/data/relief.rda"#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+saveRDS(rivers, file = "/Users/roli/Documents/sabotag-data/data/rivers.rda")
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")
+saveRDS(relief, file = "/Users/roli/Documents/sabotag-data/data/relief.rda")
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+saveRDS(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+crs(relief) <- "epsg:4326"#
+#
+saveRDS(relief, file = "/Users/roli/Documents/sabotag-data/data/relief.rda")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+#
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/data/lakes.rda")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+saveRDS(rivers, file = "/Users/roli/Documents/sabotag-data/data/rivers.rda")
+? serialize
+saveRDS(serialize(Austria), file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")
+? saveRDS
+? readRDS
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+saveRDS(BEV, file = "/Users/roli/Documents/sabotag-data/extdata/BEV.rds")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+saveRDS(Austria, file = "/Users/roli/Documents/sabotag-data/extdata/Austria.rds")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+crs(relief) <- "epsg:4326"#
+#
+saveRDS(relief, file = "/Users/roli/Documents/sabotag-data/extdata/relief.rds")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+#
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/extdata/lakes.rds")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+saveRDS(rivers, file = "/Users/roli/Documents/sabotag-data/extdata/rivers.rds")
+require(terra)#
+#	BEV#
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, CRS("+init=epsg:4326"))#
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+saveRDS(BEV, file = "/Users/roli/Documents/sabotag-data/extdata/BEV.rds")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+saveRDS(Austria, file = "/Users/roli/Documents/sabotag-data/extdata/Austria.rds")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+crs(relief) <- "epsg:4326"#
+#
+saveRDS(relief, file = "/Users/roli/Documents/sabotag-data/extdata/relief.rds")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+#
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/extdata/lakes.rds")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+saveRDS(rivers, file = "/Users/roli/Documents/sabotag-data/extdata/rivers.rds")
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")#
+#
+BEV <- project(BEV, "epsg:4326")
+BEV
+j <- c("KG", "PG", "PB", "BL", "ST")#
+BEV <- BEV[ j ]#
+head(BEV)#
+#
+Encoding(BEV$KG) <- "UTF-8"#
+Encoding(BEV$PG) <- "UTF-8"#
+Encoding(BEV$PB) <- "UTF-8" #
+Encoding(BEV$BL) <- "UTF-8" #
+Encoding(BEV$ST) <- "UTF-8"#
+#
+saveRDS(BEV, file = "/Users/roli/Documents/sabotag-data/extdata/BEV.rds")#
+#
+#	Austria#
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")#
+#
+saveRDS(Austria, file = "/Users/roli/Documents/sabotag-data/extdata/Austria.rds")#
+#
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")#
+crs(relief) <- "epsg:4326"#
+#
+saveRDS(relief, file = "/Users/roli/Documents/sabotag-data/extdata/relief.rds")#
+#
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")#
+#
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/extdata/lakes.rds")#
+#
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")#
+saveRDS(rivers, file = "/Users/roli/Documents/sabotag-data/extdata/rivers.rds")

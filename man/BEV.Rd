@@ -1,4 +1,5 @@
 \name{BEV}
+\alias{readRDS}
 \alias{BEV}
 \docType{data}
 
@@ -22,14 +23,16 @@ Additional columns supplied by the original data set were removed to reduce
 memory demands.
 }
 
-\usage{data("BEV")}
+%\usage{
+%readRDS(system.file("extdata/Austria.rds", package = "sabotagdata"))
+%}
 
 \references{
 \href{https://www.data.gv.at/katalog/dataset/51bdc6dc-25ae-41de-b8f3-938f9056af62}{data.gv.at}
 }
 
 \examples{
-data("BEV", package = "sabotagdata")
+BEV <- readRDS(system.file("extdata/BEV.rds", package = "sabotagdata"))
 
 names(BEV)
 }

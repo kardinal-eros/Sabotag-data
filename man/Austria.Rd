@@ -13,10 +13,13 @@ codes (ISO 3166-1 alpha-2). The outer frame is marked as not being
 assigned to any country code.
 }
 
-\usage{data("BEV")}
+%\usage{
+%readRDS(system.file("extdata/Austria.rds", package = "sabotagdata"))
+%}
 
 \examples{
-data("Austria", package = "sabotagdata")
+
+Austria <- readRDS(system.file("extdata/Austria.rds", package = "sabotagdata"))
 
 par(mfrow = c(2,2))
 

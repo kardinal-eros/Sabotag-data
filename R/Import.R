@@ -1,14 +1,13 @@
 #	script to import and save as rda file
 if (FALSE) {
-
+require(terra)
 #	BEV
+BEV <- vect("/Users/roli/Dropbox/ENNACON/resourcen/gpkg/bev-bundle/administrative-boundaries.gpkg", "", crs = "epsg:31287")
 
-BEV <- readOGR("/Users/roli/Dropbox/ENNACON/resourcen/shp/austria_bundle/pg_administrative_boundaries", "pg_administrative_boundaries", p4s = "+init=epsg:31287", stringsAsFactors = FALSE)
-
-BEV <- spTransform(BEV, CRS("+init=epsg:4326"))
+BEV <- project(BEV, "epsg:4326")
 j <- c("KG", "PG", "PB", "BL", "ST")
 BEV <- BEV[ j ]
-head(BEV@data)
+head(BEV)
 
 Encoding(BEV$KG) <- "UTF-8"
 Encoding(BEV$PG) <- "UTF-8"
@@ -16,22 +15,22 @@ Encoding(BEV$PB) <- "UTF-8"
 Encoding(BEV$BL) <- "UTF-8" 
 Encoding(BEV$ST) <- "UTF-8"
 
-save(BEV, file = "/Users/roli/Documents/sabotag-data/data/BEV.rda", compress = "xz")
+saveRDS(BEV, file = "/Users/roli/Documents/sabotag-data/inst/extdata/BEV.rds")
 
 #	Austria
-Austria <- readOGR("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame", "pl_aut_neighbours_frame", p4s = "+init=epsg:4326", stringsAsFactors = FALSE)
+Austria <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_aut_neighbours_frame/pl_aut_neighbours_frame.shp", crs = "+init=epsg:4326")
 
-save(Austria, file = "/Users/roli/Documents/sabotag-data/data/Austria.rda")
+saveRDS(Austria, file = "/Users/roli/Documents/sabotag-data/inst/extdata/Austria.rds")
 
-relief <- brick("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")
-relief <- readAll(relief)
-projection(relief) <- CRS("+init=epsg:4326")
-save(relief, file = "relief.rda")
+relief <- rast("~/Dropbox/sabotag/dta/tif/bundle/austria/relief aut.tif")
+crs(relief) <- "epsg:4326"
 
-lakes <- readOGR("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes", "pg_lakes", p4s = "+init=epsg:4326")
-save(lakes, file = "lakes.rda")
+saveRDS(relief, file = "/Users/roli/Documents/sabotag-data/inst/extdata/relief.rds")
 
-rivers <- readOGR("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers", "pl_rivers", p4s = "+init=epsg:4326")
-save(rivers, file = "rivers.rda")
+lakes <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pg_lakes/pg_lakes.shp", crs = "epsg:4326")
 
+saveRDS(lakes, file = "/Users/roli/Documents/sabotag-data/inst/extdata/lakes.rds")
+
+rivers <- vect("/Users/roli/Dropbox/sabotag/dta/shp/bundles/austria/pl_rivers/pl_rivers.shp", crs = "epsg:4326")
+saveRDS(rivers, file = "/Users/roli/Documents/sabotag-data/inst/extdata/rivers.rds")
 }

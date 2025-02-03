@@ -1,14 +1,13 @@
 Package: sabotagdata
 Type: Package
 Title: Data Sets for the sabotag R-package
-Version: 0.1-1
-Date: 2021-02-19
+Version: 0.1-2
+Date: 2025-02-03
 Authors@R: c(person("Roland", "Kaiser", role = c("aut", "cre"),
 					 email = "kardinal.eros@gmail.com"))
 Maintainer: Roland Kaiser <kardinal.eros@gmail.com>
-Depends: R (>= 3.0.1), raster, sp
+Depends: R (>= 4.4.1), terra, sp
 Description: Data sets for the sabotag R-package.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyLoad: yes
-LazyData: yes
